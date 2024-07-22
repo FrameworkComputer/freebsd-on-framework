@@ -3,9 +3,9 @@
 ## Systems
 
 | System                           | Status                        |
-| Framework 13 Intel 11th Gen      | Not tested yet                |
-| Framework 13 Intel 12th Gen      | Testing                       |
-| Framework 13 Intel 13th Gen      | Not tested yet                |
+| Framework 13 Intel 11th Gen      | Not tested yet, probably ok   |
+| Framework 13 Intel 12th Gen      | Working                       |
+| Framework 13 Intel 13th Gen      | Not tested yet, probably ok   |
 | Framework 13 Intel Core Ultra S1 | Graphics driver not supported |
 | Framework 13 AMD 7040            | Not tested yet                |
 | Framework 16 AMD 7040            | Not tested yet                |
@@ -37,3 +37,36 @@ Work-in-progress:
 - `sway-wayland.yml`   
 - `i3-xorg.yml`
 - `i3-scfb.yml`
+
+## Hardware Support
+
+- [x] UEFI Framebuffer (SCFB)
+- [x] Intel GPU driver (11th-13th Gen)
+  - Working with `drm-61-kmod` on 12th Gen
+- [ ] Intel GPU driver (Intel Core Ultra)
+  - TODO: Needs at least 6.7, not in FreeBSD yet
+- [x] Intel AX210 WiFi
+  - Only 802.22g support in FreeBSD, up to 54Mbit
+- [ ] Intel AX210 Bluetooth
+  - Not supported in FreeBSD kernel yet
+- [ ] Fingerprint Reader
+  - Work-in-progress by Framework
+- [ ] Ambient Light Sensor (I2C HID)
+  - Work-in-progress by Framework
+- [x] Built-in Camera
+- [x] Built-in Microphone
+- Expansion Cards
+  - [x] USB-C
+  - [x] USB-A
+  - [x] MicroSD
+  - [x] SD
+  - [x] SSD
+  - [x] Audio
+  - [x] Ethernet
+    - Currently with `cdce` driver, soon with `ure` driver
+  - [x] HDMI
+    - Works with Intel GPU driver, does not work with SCFB
+  - [x] DisplayPort
+    - Works with Intel GPU driver, does not work with SCFB
+- [ ] Intel P-State
+  - Work-in-progress by Framework
