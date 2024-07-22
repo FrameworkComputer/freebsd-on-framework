@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  roles:
+    # - framework
+    - xorg
+    - intel
+    # - kde
+    # - i3
+    # - gnome

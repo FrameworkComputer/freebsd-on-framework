@@ -1,0 +1,6 @@
+---
+- name: Configure Xorg to use Intel DRM driver
+  become: yes
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/20-intel.conf"
+    dest: /usr/local/etc/X11/xorg.conf.d/20-intel.conf

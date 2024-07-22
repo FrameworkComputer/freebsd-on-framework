@@ -1,0 +1,192 @@
+---
+# Intel
+# TODO: Maybe this should be kldload in /etc/rc.conf
+- name: Load Intel CPU kernel modules
+  become: yes
+  community.general.sysrc:
+    name: "{{ item }}"
+    value: "YES"
+    state: present
+    path: /boot/loader.conf
+  with_items:
+    - coretemp_load
+    - cpuctl_load
+
+# All Framework Systems support hwpstate_intel,
+# which supercedes powerd
+- name: Don't enable powerd
+  become: yes
+  community.general.sysrc:
+    name: powerd_enable
+    value: "NO"
+    state: present
+
+- name: Install Intel drivers
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - drm-61-kmod
+    # - libva-intel-driver mesa-libs mesa-dri
+
+- name: Configure Intel DRM driver
+  become: yes
+  community.general.sysrc:
+    name: kldlist
+    value: "i915kms"
+    state: present
+
+# Any framework system
+- name: Make power button suspend instead of turning off
+  become: yes
+  ansible.posix.sysctl:
+    name: hw.acpi.power_button_state
+    value: "S3"
+    state: present
+
+- name: Configure Ethernet Expansion Card IPv4 DHCP
+  become: yes
+  community.general.sysrc:
+    name: ifconfig_ue0
+    value: "DHCP"
+    state: present
+
+- name: Configure Ethernet Expansion Card IPv6 DHCP
+  become: yes
+  community.general.sysrc:
+    name: ifconfig_ue0_ipv6
+    value: "inet6 accept_rtadv"
+    state: present
+
+- name: Install packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - webcamd
+    - v4l-utils
+
+- name: Add user to webcamd group
+  become: yes
+  user:
+    name: '{{ ansible_user_id }}'
+    groups: webcamd
+    append: yes
+  
+# Xorg
+- name: Add user to video group
+  become: yes
+  user:
+    name: '{{ ansible_user_id }}'
+    groups: video
+    append: yes
+
+- name: Install Xorg packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - xorg
+
+# KDE
+- name: Install KDE packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - kde5
+    - plasma5-sddm-kcm
+    - sddm
+    - networkmgr
+
+- name: Enable DBUS
+  become: yes
+  community.general.sysrc:
+    name: dbus_enable
+    value: "YES"
+    state: present
+
+- name: Enable SDDM
+  become: yes
+  community.general.sysrc:
+    name: sddm_enable
+    value: "YES"
+    state: present
+
+- name: Increase message size for KDE
+  become: yes
+  ansible.posix.sysctl:
+    name: "{{ item }}"
+    value: "65536"
+    state: present
+  with_items:
+    - net.local.stream.recvspace
+    - net.local.stream.sendspace
+
+# GNOME
+- name: Install GNOME packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - gnome
+    - gdm
+
+# TODO: Should enable GDM, but can't do GDM and SDDM at the same gime
+- name: Enable GDM
+  become: yes
+  community.general.sysrc:
+    name: gdm_enable
+    value: "NO"
+    state: present
+
+- name: Enable DBUS
+  become: yes
+  community.general.sysrc:
+    name: dbus_enable
+    value: "YES"
+    state: present
+
+- name: Mount procfs
+  become: true
+  ansible.posix.mount:
+    src: proc
+    path: /proc
+    fstype: procfs
+    opts: rw
+    state: mounted
+
+# i3
+- name: Install i3 packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - i3
+    - i3lock
+    - arandr
+    - dmenu
+    - i3status
+    - xfce4-terminal
+    - flameshot
+    - noto-tc
+
+# i3 config
+# F1  XF86AudioMute
+# F2  XF86AudioLowerVolume
+# F3  XF86AudioRaiseVolume
+# F4  XF86AudioPrev
+# F5  XF86AudioPause, Play?
+# F6  XF86AudioNext
+# F7  XF86MonBrightnessDown
+# F8  XF86MonBrightnessDown
+# F9  WIN+P
+# F10 TODO
+# F11 Print
+# F12 XF86AudioMedia
