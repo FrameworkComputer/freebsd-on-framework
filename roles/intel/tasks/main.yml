@@ -174,8 +174,6 @@
     - dmenu
     - i3status
     - xfce4-terminal
-    - flameshot
-    - noto-tc
 
 # i3 config
 # F1  XF86AudioMute
@@ -190,3 +188,19 @@
 # F10 TODO
 # F11 Print
 # F12 XF86AudioMedia
+
+# GUI
+- name: Install GUI packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - firefox
+    - flameshot
+    - noto-emoji
+    - noto-tc
+    - urwfonts
+# TODO: Need to run this or add to config
+# > xset fp+ /usr/local/share/fonts/urwfonts
+# > xset fp rehash
