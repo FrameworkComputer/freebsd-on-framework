@@ -27,16 +27,7 @@
 
 ## Playbooks
 
-- `kde-xorg.yml`   
-
-Work-in-progress:
-
-- `kde-wayland.yml`   
-- `gnome-wayland.yml`   
-- `gnome-xorg.yml`   
-- `sway-wayland.yml`   
-- `i3-xorg.yml`
-- `i3-scfb.yml`
+- `kde-xorg.yml`
 
 ## Hardware Support
 
@@ -55,6 +46,11 @@ Work-in-progress:
   - Work-in-progress by Framework
 - [x] Built-in Camera
 - [x] Built-in Microphone
+- [x] Suspend (S3) on 11th-13th Gen
+  - Works with Intel GPU driver, not with SCFB
+  - Wakes up only on power button, or lid, not keyboard press
+- [ ] Suspend (S0ix) on Intel Core Ultra
+  - Not supported yet by FreeBSD
 - Expansion Cards
   - [x] USB-C
   - [x] USB-A
@@ -70,3 +66,8 @@ Work-in-progress:
     - Works with Intel GPU driver, does not work with SCFB
 - [ ] Intel P-State
   - Work-in-progress by Framework
+
+## Known issues
+
+- WiFi Driver (iwlwifi) sometimes crashes on shutdown or resume from S3)
+  - Workaround: We could unload before suspend or shutdown and reload on resume
