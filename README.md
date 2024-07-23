@@ -70,4 +70,4 @@
 ## Known issues
 
 - WiFi Driver (iwlwifi) sometimes crashes on shutdown or resume from S3)
-  - Workaround: We could unload before suspend or shutdown and reload on resume
+  - [Workaround](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=263632)

@@ -17,3 +17,20 @@
   ansible.builtin.copy:
     src: "{{ role_path }}/files/40-libinput.conf"
     dest: /usr/local/etc/X11/xorg.conf.d/40-libinput.conf
+
+# Workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=263632
+- name: Stop WiFi after suspending
+  become: yes
+  ansible.builtin.lineinfile:
+    regexp: 'stop wlan0$'
+    insertafter: '^# kldunload usb'
+    path: /etc/rc.suspend
+    line: /usr/sbin/service netif stop wlan0
+
+- name: Restart WiFi when resuming
+  become: yes
+  ansible.builtin.lineinfile:
+    regexp: 'start wlan0$'
+    insertafter: '^# kldload usb'
+    path: /etc/rc.resume
+    line: /usr/sbin/service netif start wlan0
