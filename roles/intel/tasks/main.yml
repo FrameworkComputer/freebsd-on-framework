@@ -1,16 +1,14 @@
 ---
 # Intel
-# TODO: Maybe this should be kldload in /etc/rc.conf
 - name: Load Intel CPU kernel modules
   become: yes
   community.general.sysrc:
-    name: "{{ item }}"
-    value: "YES"
-    state: present
-    path: /boot/loader.conf
+    name: kld_list
+    value: "{{ item }}"
+    state: value_present
   with_items:
-    - coretemp_load
-    - cpuctl_load
+    - coretemp
+    - cpuctl
 
 # All Framework Systems support hwpstate_intel,
 # which supercedes powerd
@@ -33,9 +31,9 @@
 - name: Configure Intel DRM driver
   become: yes
   community.general.sysrc:
-    name: kldlist
+    name: kld_list
     value: "i915kms"
-    state: present
+    state: value_present
 
 # Any framework system
 - name: Make power button suspend instead of turning off
@@ -74,7 +72,7 @@
   community.general.sysrc:
     name: kld_list
     value: "cuse"
-    state: present
+    state: value_present
 
 - name: Add user to webcamd group
   become: yes
