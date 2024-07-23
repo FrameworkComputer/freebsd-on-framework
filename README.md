@@ -12,7 +12,7 @@
 
 ## Preparation
 
-1. Install latest FreeBSD 15-Current from installer
+1. [Install latest FreeBSD 15-Current from installer](installation-instructions.md)
 2. Create your user, adding it to the `wheel` group
 3. Reboot into installed system
 4. Log into root
