@@ -59,7 +59,7 @@
     value: "inet6 accept_rtadv"
     state: present
 
-- name: Install packages
+- name: Install webcamd related packages
   become: yes
   package:
     name: "{{ item }}"
@@ -67,6 +67,14 @@
   with_items:
     - webcamd
     - v4l-utils
+    - v4l_compat
+
+- name: Load cuse driver
+  become: yes
+  community.general.sysrc:
+    name: kld_list
+    value: "cuse"
+    state: present
 
 - name: Add user to webcamd group
   become: yes
@@ -74,6 +82,13 @@
     name: '{{ ansible_user_id }}'
     groups: webcamd
     append: yes
+
+- name: Enable webcamd service
+  become: yes
+  community.general.sysrc:
+    name: webcamd_enable
+    value: "YES"
+    state: present
   
 # Xorg
 - name: Add user to video group
