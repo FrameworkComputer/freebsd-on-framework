@@ -1,18 +1,23 @@
 # FreeBSD on Framework
 
+FreeBSD is not currently an officially supported Operating System on Framework
+Computer systems. This repository documents the current state of how well
+FreeBSD works on our systems and helps you set it up.
+
 ## Systems
 
 | System                           | Status                        |
+|----------------------------------|-------------------------------|
 | Framework 13 Intel 11th Gen      | Not tested yet, probably ok   |
-| Framework 13 Intel 12th Gen      | Working                       |
+| Framework 13 Intel 12th Gen      | Working well                  |
 | Framework 13 Intel 13th Gen      | Not tested yet, probably ok   |
-| Framework 13 Intel Core Ultra S1 | Graphics driver not supported |
+| Framework 13 Intel Core Ultra S1 | Working with DRM 6.6          |
 | Framework 13 AMD 7040            | Not tested yet                |
 | Framework 16 AMD 7040            | Not tested yet                |
 
 ## Preparation
 
-1. [Install latest FreeBSD 15-Current from installer](installation-instructions.md)
+1. [Install latest FreeBSD from installer](installation-instructions.md)
 2. Create your user, adding it to the `wheel` group
 3. Reboot into installed system
 4. Log into root
@@ -40,8 +45,9 @@
   - Only 802.22g support in FreeBSD, up to 54Mbit
 - [ ] Intel AX210 Bluetooth
   - Not supported in FreeBSD kernel yet
-- [ ] Fingerprint Reader
-  - Work-in-progress by Framework. [See here](fingerprint-reader.md)
+  - [Experimental patches](https://reviews.freebsd.org/D44861)
+- [x] Fingerprint Reader
+  - Working. Fixes are being upstreamed. [See here](fingerprint-reader.md)
 - [ ] Ambient Light Sensor (I2C HID)
   - Work-in-progress by Framework
 - [x] Built-in Camera
@@ -59,13 +65,19 @@
   - [x] SSD
   - [x] Audio
   - [x] Ethernet
-    - Currently with `cdce` driver, soon with `ure` driver
+    - Currently with `cdce` driver, soon better support with `ure` driver
   - [x] HDMI
     - Works with Intel GPU driver, does not work with SCFB
   - [x] DisplayPort
     - Works with Intel GPU driver, does not work with SCFB
-- [ ] Intel P-State
+- [ ] Intel P-State power measurements
   - Work-in-progress by Framework
+
+### Framework 13 Intel Core Ultra Series 1
+
+The graphics driver in FreeBSD 14.1 does not work on this Intel CPU generation.
+At least DRM 6.6 is needed, which can be built with FreeBSD 15-CURRENT and [drm-kmod PR 283](https://github.com/freebsd/drm-kmod/pull/283).
+
 
 ## Known issues
 
