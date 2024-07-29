@@ -41,7 +41,7 @@
 - [ ] Intel AX210 Bluetooth
   - Not supported in FreeBSD kernel yet
 - [ ] Fingerprint Reader
-  - Work-in-progress by Framework
+  - Work-in-progress by Framework. [See here](fingerprint-reader.md)
 - [ ] Ambient Light Sensor (I2C HID)
   - Work-in-progress by Framework
 - [x] Built-in Camera
