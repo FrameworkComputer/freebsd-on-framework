@@ -26,6 +26,7 @@
     state: present
   with_items:
     - drm-61-kmod
+    - gpu-firmware-kmod
     # - libva-intel-driver mesa-libs mesa-dri
 
 - name: Configure Intel DRM driver
