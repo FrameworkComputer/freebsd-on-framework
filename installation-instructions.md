@@ -18,20 +18,30 @@ For example dd, [Rufus](https://rufus.ie/en/), or [balena etcher](https://etcher
 1. Select Install
 1. Select Keymap
 1. Set hostname
-1. Select distribution (default is ok)
+1. Select distribution
+    - Defaults are okay
 1. Set up Internet connection
-1. Select partitioning (default ZFS is ok, confirm all default options)
+1. Select partitioning
+    - The default, ZFS is ok, confirm all default options
 1. Choose a password
-1. Is CMOS Timezone UTC? => Yes
+1. Is CMOS Timezone UTC?
+  - Yes, unless the previous OS on this system was Windows
 1. Select timezone, confirm date and time
 1. Choose services
-  - `moused`
-  - `ntpd`
-  - ~~`ntpd_sync_on_start`~~
-  - ~~`powerd`~~
+    1. `moused`
+    1. `ntpd`
+    1. ~~`ntpd_sync_on_start`~~
+    1. ~~`powerd`~~
 1. Choose system hardening options (default nothing is fine)
 1. Add user
-  - Keep defaults (press enter) for: "Uid", "Login Group", "Login class", "Shell", "Home directory", "Home directory permissions", "ZFS Encryption"
-  - Other groups: wheel video
+    - Keep defaults (press enter) for
+        - `Uid`
+        - `Login Group`
+        - `Login class`
+        - `Shell`
+        - `Home directory`
+        - `Home directory permissions`
+        - `ZFS Encryption`
+    - Other groups: `wheel video`
 1. No final modifications
 1. Reboot into installed system
