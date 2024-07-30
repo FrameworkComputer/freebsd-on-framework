@@ -2,8 +2,8 @@
 - hosts: localhost
   roles:
     # - framework
-    - xorg
     - intel
-    # - kde
+    - xorg
+    - kde
     # - i3
     # - gnome

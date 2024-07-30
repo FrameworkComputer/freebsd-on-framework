@@ -1,0 +1,29 @@
+---
+# i3
+- name: Install i3 packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - i3
+    - i3lock
+    - arandr
+    - dmenu
+    - i3status
+    - xfce4-terminal
+
+# i3 config
+# F1  XF86AudioMute
+# F2  XF86AudioLowerVolume
+# F3  XF86AudioRaiseVolume
+# F4  XF86AudioPrev
+# F5  XF86AudioPause, Play?
+# F6  XF86AudioNext
+# F7  XF86MonBrightnessDown
+# F8  XF86MonBrightnessDown
+# F9  WIN+P
+# F10 TODO
+# F11 Print
+# F12 XF86AudioMedia
+

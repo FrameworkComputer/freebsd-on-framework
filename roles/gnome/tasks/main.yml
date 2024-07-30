@@ -1,0 +1,34 @@
+---
+# GNOME
+- name: Install GNOME packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - gnome
+    - gdm
+
+# TODO: Should enable GDM, but can't do GDM and SDDM at the same gime
+- name: Enable GDM
+  become: yes
+  community.general.sysrc:
+    name: gdm_enable
+    value: "NO"
+    state: present
+
+- name: Enable DBUS
+  become: yes
+  community.general.sysrc:
+    name: dbus_enable
+    value: "YES"
+    state: present
+
+- name: Mount procfs
+  become: true
+  ansible.posix.mount:
+    src: proc
+    path: /proc
+    fstype: procfs
+    opts: rw
+    state: mounted
