@@ -1,0 +1,36 @@
+---
+# AMD
+- name: Load CPU kernel modules
+  become: yes
+  community.general.sysrc:
+    name: kld_list
+    value: "{{ item }}"
+    state: value_present
+  with_items:
+    - cpuctl
+
+# TODO: Is there a custom driver for AMD?
+# Intel has hwpstate_intel
+# - name: Don't enable powerd
+#   become: yes
+#   community.general.sysrc:
+#     name: powerd_enable
+#     value: "YES"
+#     state: present
+
+- name: Install Linux GPU drivers
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - drm-61-kmod
+    - gpu-firmware-kmod
+    # - libva-intel-driver mesa-libs mesa-dri
+
+- name: Configure AMD DRM driver
+  become: yes
+  community.general.sysrc:
+    name: kld_list
+    value: "amdgpu"
+    state: value_present
