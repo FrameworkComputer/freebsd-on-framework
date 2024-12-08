@@ -6,6 +6,8 @@
   - https://reviews.freebsd.org/D44861
 - RZ616
   - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264300
+- Framework 16
+  - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282592
 
 
 ## Building a custom kernel
