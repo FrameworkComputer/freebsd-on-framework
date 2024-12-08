@@ -8,6 +8,8 @@
   - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264300
 - Framework 16
   - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282592
+- AMD Ryzen 7040 Series (Phoenix, Zen 4)
+  - hwpstate: https://reviews.freebsd.org/D47985
 
 
 ## Building a custom kernel
