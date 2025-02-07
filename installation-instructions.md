@@ -6,7 +6,7 @@ For Framework 13 Intel Core Ultra Series 1 systems (released  Summer 2024)
 please use the latest development snapshot: [FreeBSD 15-CURRENT](https://download.freebsd.org/snapshots/amd64/amd64/ISO-IMAGES/15.0/).
 
 All other systems can use the latest stable release
-[FreeBSD 14.1](https://download.freebsd.org/ftp/releases/ISO-IMAGES/14.1/FreeBSD-14.1-RELEASE-amd64-dvd1.iso).
+[FreeBSD 14.2](https://download.freebsd.org/ftp/releases/ISO-IMAGES/14.2/FreeBSD-14.2-RELEASE-amd64-dvd1.iso).
 
 Burn the ISO to a USB thumb drive using your favorite imager.
 For example dd, [Rufus](https://rufus.ie/en/), or [balena etcher](https://etcher.balena.io/).
