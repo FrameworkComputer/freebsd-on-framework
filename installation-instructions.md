@@ -9,7 +9,7 @@ For the following systems, please use the latest development snapshot: [FreeBSD 
 - Framework Desktop - AMD Ryzen AI Max 300 (Released Spring 2025)
 
 All other systems can use the latest stable release
-[FreeBSD 14.1](https://download.freebsd.org/ftp/releases/ISO-IMAGES/14.1/FreeBSD-14.1-RELEASE-amd64-dvd1.iso).
+[FreeBSD 14.2](https://download.freebsd.org/ftp/releases/ISO-IMAGES/14.2/FreeBSD-14.2-RELEASE-amd64-dvd1.iso).
 
 Burn the ISO to a USB thumb drive using your favorite imager.
 For example dd, [Rufus](https://rufus.ie/en/), or [balena etcher](https://etcher.balena.io/).
