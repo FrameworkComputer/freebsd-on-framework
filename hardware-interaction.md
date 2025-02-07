@@ -36,14 +36,14 @@ Present voltage:        15108 mV
 > sysctl dev.acpi_lid.0.state
 dev.acpi_lid.0.state: 1
 
-# Make system power off when pressing power button
-> sudo sysctl hw.acpi.power_button_state S5
+# Make system power off when pressing power button (add it to `/etc/sysctl.conf` to make the change permanent)
+> sudo sysctl hw.acpi.power_button_state=S5
 
 # Make system sleep when pressing power button
-> sudo sysctl hw.acpi.power_button_state S3
+> sudo sysctl hw.acpi.power_button_state=S3
 
 # Ignore lid event (might be overridden by 
-> sudo sysctl hw.acpi.power_button_state None
+> sudo sysctl hw.acpi.power_button_state=None
 
 # Suspend via zzz
 > zzz
