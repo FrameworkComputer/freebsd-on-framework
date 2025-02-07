@@ -1,27 +1,10 @@
 # Fingerprint Reader
 
-The fingerprint reader is supported by libfprintd and fprintd software.
-The current version in FreeBSD ports is very old, so you'll have to build from the fixed port.
+## Installing
 
-## Building and Installing
-
-Build it from our fork of freebsd-ports:
-
+Install the fprintd package:
 ```
-# Prepare
-git clone https://github.com/FrameworkComputer/freebsd-ports
-cd freebsd-ports
-git checkout fprint
-
-# Build
-cd security/libfprint
-sudo make install-missing-packages
-make
-cd securiy/fprintd
-make
-
-# Install
-sudo make install
+sudo pkg install fprintd
 ```
 
 ## Configuring
@@ -47,6 +30,8 @@ fprintd-verify
 ```
 
 ## Upstreaming effort
+
+The following is no longer needed as the FreeBSD port / package has been updated to the latest version and patches were upstreamed.
 
 - freebsd-ports
   - [branch with all changes](https://github.com/FrameworkComputer/freebsd-ports/tree/fprint)
