@@ -102,6 +102,19 @@ TODO: KDE on Wayland
 The graphics driver in FreeBSD 14.1 does not work on this Intel CPU generation.
 At least DRM 6.6 is needed, which can be built with FreeBSD 15-CURRENT and [drm-kmod PR #283](https://github.com/freebsd/drm-kmod/pull/283).
 
+### Framework Desktop (AMD)
+- [x] USB-A
+- [x] USB-C
+- [x] SSD
+- [ ] Ethernet (RealTek NIC, RTL8126)
+  - In-tree driver does not attach
+  - The realtek-re-kmod driver attaches, but doesn't appear to work
+- [ ] AMD GPU
+  - amdgpu 6.6 fails to attach, "Fatal error during GPU init"
+- [ ] MediaTek WiFi
+- [?] AMD HDA audio controller
+  - Driver attaches, untested
+
 ## Interacting with the hardware
 
 Please refer to [Hardware Interaction](hardware-interaction.md) for details.
