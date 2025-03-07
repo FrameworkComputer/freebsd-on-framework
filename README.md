@@ -81,7 +81,6 @@ TODO: KDE on Wayland
   - Not supported yet by FreeBSD, see below
 - [x] Framework 13 Touchpad
 - [x] Framework 16 Touchpad
-  - [ ] Needs [pending patch](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282592)
 
 ### Expansion Cards
 
