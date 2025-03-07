@@ -119,7 +119,7 @@ At least DRM 6.6 is needed, which can be built with FreeBSD 15-CURRENT and [drm-
 - [ ] AMD GPU
   - amdgpu 6.6 fails to attach, "Fatal error during GPU init"
 - [ ] RZ717 MediaTek WiFi
-- [?] AMD HDA audio controller
+- [ ] AMD HDA audio controller
   - Driver attaches, untested
 - [ ] SOC Serial Console
   - Can work with userspace (`cu`)
@@ -164,9 +164,7 @@ The commands there are especially useful for Linux users coming to FreeBSD.
   - [Workaround](https://github.com/pgj/freebsd-wifibox) by using a Linux virtual machine
 - AX210 Bluetooth not supported yet
   - https://reviews.freebsd.org/D44861
-- RZ717 not supported yet
-  - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264300
-- RZ616 not supported yet
+- RZ616, RZ717 not supported yet
   - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264300
 - S0ix and s2idle not supported yet
     - https://reviews.freebsd.org/D17675
