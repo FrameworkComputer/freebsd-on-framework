@@ -80,7 +80,7 @@ TODO: KDE on Wayland
 - [ ] Suspend (S0ix)
   - Not supported yet by FreeBSD, see below
 - [x] Framework 13 Touchpad
-- [ ] Framework 16 Touchpad
+- [x] Framework 16 Touchpad
 
 ### Expansion Cards
 
