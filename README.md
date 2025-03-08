@@ -1,4 +1,4 @@
-# FreeBSD on Framework
+# FreeBSD on Framewok
 
 FreeBSD is not currently an officially supported Operating System on Framework
 Computer systems. This repository documents the current state of how well
@@ -16,7 +16,7 @@ FreeBSD works on our systems and helps you set it up.
 | Framework 13      | AMD 7040 Series           | Working with DRM 6.2 (FreeBSD 14.2) |
 | Framework 13      | AMD AI 300 Series         | Working, no GUI yet                 |
 | Framework 16      | AMD 7040 Series           | Working with DRM 6.2 (FreeBSD 14.2) |
-| Framework Desktop | AMD AI Max 300 Series     | Workin, no GUI yet                  |
+| Framework Desktop | AMD AI Max 300 Series     | Working, no GUI yet                 |
 
 ## Preparation
 
