@@ -6,8 +6,8 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - kde5
-    - plasma5-sddm-kcm
+    - kde
+    - plasma6-sddm-kcm
     - sddm
     - networkmgr
 
