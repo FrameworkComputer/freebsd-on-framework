@@ -2,8 +2,11 @@
 
 ## Download and burn ISO
 
-For Framework 13 Intel Core Ultra Series 1 systems (released  Summer 2024)
-please use the latest development snapshot: [FreeBSD 15-CURRENT](https://download.freebsd.org/snapshots/amd64/amd64/ISO-IMAGES/15.0/).
+For the following systems, please use the latest development snapshot: [FreeBSD 15-CURRENT](https://download.freebsd.org/snapshots/amd64/amd64/ISO-IMAGES/15.0/).
+
+- Framework 13 - Intel Core Ultra Series 1 (Released  Summer 2024)
+- Framework 13 - AMD Ryzen AI 300 (Released Spring 2025)
+- Framework Desktop - AMD Ryzen AI Max 300 (Released Spring 2025)
 
 All other systems can use the latest stable release
 [FreeBSD 14.1](https://download.freebsd.org/ftp/releases/ISO-IMAGES/14.1/FreeBSD-14.1-RELEASE-amd64-dvd1.iso).
