@@ -13,9 +13,9 @@ FreeBSD works on our systems and helps you set it up.
 | Framework 13      | Intel 12th Gen            | Working well                        |
 | Framework 13      | Intel 13th Gen            | Working well                        |
 | Framework 13      | Intel Core Ultra Series 1 | Working with DRM 6.6 (FreeBSD 15)   |
-| Framework 13      | AMD 7040 Series           | Working with DRM 6.2 (FreeBSD 14.2) |
+| Framework 13      | AMD 7040 Series           | Working with DRM 6.1 (FreeBSD 14.2) |
 | Framework 13      | AMD AI 300 Series         | Working, no GUI yet                 |
-| Framework 16      | AMD 7040 Series           | Working with DRM 6.2 (FreeBSD 14.2) |
+| Framework 16      | AMD 7040 Series           | Working with DRM 6.1 (FreeBSD 14.2) |
 | Framework Desktop | AMD AI Max 300 Series     | Working, no GUI yet                 |
 
 ## Preparation
@@ -27,11 +27,13 @@ FreeBSD works on our systems and helps you set it up.
 5. Install sudo: `pkg install sudo`
 6. Run `visudo` and remove `#` from infront of the line with `wheel`
 7. Log out and log into your user
-8. `sudo pkg install git py311-ansible`
-9. `git clone https://github.com/FrameworkComputer/freebsd-on-framework`
-10. `cd freebsd-on-framework`
-11. Run `sudo ls` and type your password to unlock passwordless sudo
-12. Run your desired Playbook, e.g. `ansible-playbook kde-xorg.yml`
+8. Edit `/etc/pkg/FreeBSD.conf` to change the url line to `url: "pkg+<http://pkg.FreeBSD.org/${ABI}/latest>"`
+9. Then run `sudo pkg update`
+10. `sudo pkg install git py311-ansible`
+11. `git clone https://github.com/FrameworkComputer/freebsd-on-framework`
+12. `cd freebsd-on-framework`
+13. Run `sudo ls` and type your password to unlock passwordless sudo
+14. Run your desired Playbook, e.g. `ansible-playbook kde-xorg.yml`
 
 ## Playbooks
 
