@@ -43,7 +43,7 @@ TODO: KDE on Wayland
 
 ### Generic
 
-- [ ] Framework 12 Touchpad
+- [x] Framework 12 Touchpad
 - [x] Framework 13 Touchpad
 - [x] Framework 16 Touchpad
 - [x] Fingerprint Reader ([Fixes contributed by Framework](fingerprint-reader.md))
