@@ -1,4 +1,4 @@
-# FreeBSD on Framewok
+# FreeBSD on Framework
 
 FreeBSD is not currently an officially supported Operating System on Framework
 Computer systems. This repository documents the current state of how well
