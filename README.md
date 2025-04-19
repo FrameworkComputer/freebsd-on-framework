@@ -43,7 +43,7 @@ TODO: KDE on Wayland
 
 ### Generic
 
-- [ ] Framework 12 Touchpad
+- [x] Framework 12 Touchpad
 - [x] Framework 13 Touchpad
 - [x] Framework 16 Touchpad
 - [x] Fingerprint Reader ([Fixes contributed by Framework](fingerprint-reader.md))
@@ -85,8 +85,10 @@ TODO: KDE on Wayland
 
 ### AMD Mainboards
 
-- [x] AMD GPU driver
+- [x] AMD GPU driver (Ryzen 7040 Series)
   - Working with `drm-61-kmod`
+- [ ] AMD GPU driver (Ryzen AI 300/Max)
+  - Not working with `drm-66-kmod`
 - [ ] Suspend (S0ix)
   - Not supported yet by FreeBSD, see below
 
@@ -110,14 +112,17 @@ The graphics driver in FreeBSD 14.1 does not work on this Intel CPU generation.
 At least DRM 6.6 is needed, which can be built with FreeBSD 15-CURRENT and [drm-kmod PR #283](https://github.com/freebsd/drm-kmod/pull/283).
 
 ### Framework Desktop (AMD Ryzen AI Max 300)
+
 - [x] USB-A
-- [x] USB-C
+- [x] USB-C USB3.2
+- [ ] USB-C USB4
 - [x] SSD
-- [ ] Ethernet (RealTek NIC, RTL8126)
+- [x] Ethernet (RealTek NIC, RTL8126)
   - In-tree driver does not attach
-  - The realtek-re-kmod driver attaches, but doesn't appear to work
+  - Port `realtek-re-kmod` version `1100` works
 - [ ] AMD GPU
-  - amdgpu 6.6 fails to attach, "Fatal error during GPU init"
+  - [ ] amdgpu 6.6 fails to attach, "Fatal error during GPU init"
+  - [ ] USB-C DisplayPort Alt-Mode
 - [ ] RZ717 MediaTek WiFi
 - [ ] AMD HDA audio controller
   - Driver attaches, untested

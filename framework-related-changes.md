@@ -13,7 +13,7 @@
   - hwpstate: https://reviews.freebsd.org/D47985
 
 
-## Building a custom kernel
+## Building a custom kernel and world
 
 ```
 > git clone https://github.com/freebsd/freebsd-src
