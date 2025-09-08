@@ -16,6 +16,7 @@ FreeBSD works on our systems and helps you set it up.
 | Framework 13      | AMD 7040 Series           | Working with DRM 6.2 (FreeBSD 14.2) |
 | Framework 13      | AMD AI 300 Series         | Working, no GUI yet                 |
 | Framework 16      | AMD 7040 Series           | Working with DRM 6.2 (FreeBSD 14.2) |
+| Framework 16      | AMD AI 300 Series         | Working well with nvidia GPU        |
 | Framework Desktop | AMD AI Max 300 Series     | Working, no GUI yet                 |
 
 ## Preparation
@@ -89,6 +90,7 @@ TODO: KDE on Wayland
   - Working with `drm-61-kmod`
 - [ ] AMD GPU driver (Ryzen AI 300/Max)
   - Not working with `drm-66-kmod`
+  - amdgpu 6.6 fails to attach, "Fatal error during GPU init"
 - [ ] Suspend (S0ix)
   - Not supported yet by FreeBSD, see below
 
@@ -120,10 +122,9 @@ At least DRM 6.6 is needed, which can be built with FreeBSD 15-CURRENT and [drm-
 - [x] Ethernet (RealTek NIC, RTL8126)
   - In-tree driver does not attach
   - Port `realtek-re-kmod` version `1100` works
-- [ ] AMD GPU
-  - [ ] amdgpu 6.6 fails to attach, "Fatal error during GPU init"
-  - [ ] USB-C DisplayPort Alt-Mode
-- [ ] RZ717 MediaTek WiFi
+- [ ] AMD GPU, See AMD Mainboard section
+- [ ] Suspend (Modern Standby) See AMD Mainboard section
+- [ ] RZ717 MediaTek WiFi, see below
 - [ ] AMD HDA audio controller
   - Driver attaches, untested
 - [ ] SOC Serial Console
@@ -156,6 +157,17 @@ uart2: <16950 or compatible> iomem 0xfedc9000-0xfedc9fff,0xfedc7000-0xfedc7fff i
   - [ ] Not able to connect to networks
 - [ ] AX211 Bluetooth
 
+### Framework 16 (AMD Ryzen AI 300, nvidia)
+
+- [ ] AMD GPU, See AMD Mainboard section
+- [ ] Suspend (Modern Standby) See AMD Mainboard section
+- [x] [NVIDIA RTX 5070](nvidia.md) works
+- [ ] RZ717 MediaTek WiFi, see below
+
+```
+uart2: <16950 or compatible> iomem 0xfedc9000-0xfedc9fff,0xfedc7000-0xfedc7fff irq10 on acpi0
+```
+
 ## Interacting with the hardware
 
 Please refer to [Hardware Interaction](hardware-interaction.md) for details.
@@ -171,6 +183,8 @@ The commands there are especially useful for Linux users coming to FreeBSD.
   - https://reviews.freebsd.org/D44861
 - RZ616, RZ717 not supported yet
   - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264300
+  - https://github.com/FreeBSDFoundation/proj-laptop/issues/66
+  - https://github.com/FreeBSDFoundation/proj-laptop/issues/86
 - S0ix and s2idle not supported yet
     - https://reviews.freebsd.org/D17675
     - https://reviews.freebsd.org/D17676
