@@ -159,6 +159,8 @@ uart2: <16950 or compatible> iomem 0xfedc9000-0xfedc9fff,0xfedc7000-0xfedc7fff i
 
 ### Framework 16 (AMD Ryzen AI 300, nvidia)
 
+- [x] Speaker output
+  - https://reviews.freebsd.org/D52423
 - [ ] AMD GPU, See AMD Mainboard section
 - [ ] Suspend (Modern Standby) See AMD Mainboard section
 - [x] [NVIDIA RTX 5070](nvidia.md) works
