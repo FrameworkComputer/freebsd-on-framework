@@ -28,9 +28,16 @@
     - gpu-firmware-kmod
     # - libva-intel-driver mesa-libs mesa-dri
 
-- name: Configure AMD DRM driver
+- name: Enable AMD DRM driver
   become: yes
   community.general.sysrc:
     name: kld_list
     value: "amdgpu"
     state: value_present
+
+- name: Disable Intel DRM driver
+  become: yes
+  community.general.sysrc:
+    name: kld_list
+    value: "i915kms"
+    state: value_absent
