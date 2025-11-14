@@ -198,10 +198,10 @@ The commands there are especially useful for Linux users coming to FreeBSD.
 Information about Framework Computer systems by the FreeBSD community
 
 - Wiki
- - https://wiki.freebsd.org/Laptops/Framework_Laptop
- - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_intel_11th_gen
- - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_intel_13th_gen
- - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_Intel_Core_Ultra_Series_1
- - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_AMD_Ryzen_7040_Series
+  - https://wiki.freebsd.org/Laptops/Framework_Laptop
+  - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_intel_11th_gen
+  - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_intel_13th_gen
+  - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_Intel_Core_Ultra_Series_1
+  - https://wiki.freebsd.org/Laptops/Framework_Laptop/13_AMD_Ryzen_7040_Series
 - Bugzilla
   - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=262152
