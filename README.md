@@ -152,9 +152,8 @@ uart2: <16950 or compatible> iomem 0xfedc9000-0xfedc9fff,0xfedc7000-0xfedc7fff i
 - [x] Audio jack speaker
 - [ ] Audio jack mic -> not showing up
 - [x] DRM driver (6.1, 6.6)
-- [ ] AX211 WiFi
-  - [x] Can scan with iwlwifi
-  - [ ] Not able to connect to networks
+- [x] AX211 WiFi
+  - [x] 802.11ac networks work
 - [ ] AX211 Bluetooth
 
 ### Framework 16 (AMD Ryzen AI 300, nvidia)
