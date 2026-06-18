@@ -71,9 +71,9 @@ TODO: KDE on Wayland
 - [x] UEFI Framebuffer (SCFB)
 - [x] Intel GPU driver (11th-13th Gen)
   - Working with `drm-61-kmod` on 12th Gen
-- [x] Intel GPU driver (Intel Core Ultra series 1)
+- [x] Intel GPU driver (Intel Core Ultra Series 1)
   - Working with `drm-612-kmod`
-- [ ] Intel GPU driver (Intel Core Ultra series 3)
+- [ ] Intel GPU driver (Intel Core Ultra Series 3)
 - [x] Intel AX210 WiFi
   - Working with if_iwlwifi(4)
   - Only 802.11ac support in FreeBSD right now
@@ -82,11 +82,14 @@ TODO: KDE on Wayland
   - Only 802.11ac support in FreeBSD right now
 - [ ] Intel AX210 Bluetooth
   - Not supported in FreeBSD kernel yet, see below
+- [x] Intel BE211 WiFi
+- [ ] Intel BE211 Bluetooth
+  - Not supported in FreeBSD kernel yet, see below
 - [x] Suspend (S3) on 11th-13th Gen
   - Works with Intel GPU driver, not with SCFB
   - Wakes up only on power button, or lid, not keyboard press
-- [ ] Suspend (S0ix) on Intel Core Ultra
-  - Not supported yet by FreeBSD, see below
+- [ ] Suspend (S0ix) on Intel Core Ultra Series 1, 3
+  - Work in progress by FreeBSD, see below
 - [ ] Intel P-State power measurements
   - Work-in-progress by Framework
 
@@ -113,11 +116,6 @@ TODO: KDE on Wayland
   - Works with Intel GPU driver, does not work with SCFB
 - [x] DisplayPort
   - Works with Intel GPU driver, does not work with SCFB
-
-### Framework 13 - Intel Core Ultra Series 1
-
-The graphics driver in FreeBSD 14.1 does not work on this Intel CPU generation.
-At least DRM 6.6 is needed, which can be built with FreeBSD 15-CURRENT and [drm-kmod PR #283](https://github.com/freebsd/drm-kmod/pull/283).
 
 ### Framework Desktop (AMD Ryzen AI Max 300)
 
@@ -186,8 +184,6 @@ The commands there are especially useful for Linux users coming to FreeBSD.
   - [Workaround](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=263632)
 - iwlwifi limited to 802.11g speed
   - [Workaround](https://github.com/pgj/freebsd-wifibox) by using a Linux virtual machine
-- AX210 Bluetooth not supported yet
-  - https://reviews.freebsd.org/D44861
 - RZ616, RZ717 not supported yet
   - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264300
   - https://github.com/FreeBSDFoundation/proj-laptop/issues/66
