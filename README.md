@@ -14,7 +14,7 @@ FreeBSD works on our systems and helps you set it up.
 | Framework Laptop 13 | 13th Gen Intel Core         | Working well                        |
 | Framework Laptop 13 | Intel Core Ultra Series 1   | Working with DRM 6.6 (FreeBSD 15)   |
 | Framework Laptop 13 | AMD Ryzen 7040 Series       | Working with DRM 6.2 (FreeBSD 14.2) |
-| Framework Laptop 13 | AMD Ryzen AI 300 Series     | Working, no GUI yet                 |
+| Framework Laptop 13 | AMD Ryzen AI 300 Series     | Working with DRM 6.12 (FreeBSD 15.1) |
 | Framework Laptop 13 Pro | Intel Core Ultra Series 3 | |
 | Framework Laptop 16 | AMD Ryzen 7040 Series       | Working with DRM 6.2 (FreeBSD 14.2) |
 | Framework Laptop 16 | AMD Ryzen AI 300 Series     | Working well with nvidia GPU        |
@@ -97,7 +97,9 @@ TODO: KDE on Wayland
 
 - [x] AMD GPU driver (Ryzen 7040 Series)
   - Working with `drm-61-kmod`
-- [ ] AMD GPU driver (Ryzen AI 300/Max)
+- [x] AMD GPU driver (Ryzen AI 300 Series)
+  - Working with `drm-612-kmod`
+- [ ] AMD GPU driver (Ryzen AI Max 300 Series)
   - Not working with `drm-66-kmod`
   - amdgpu 6.6 fails to attach, "Fatal error during GPU init"
 - [ ] Suspend (S0ix)
