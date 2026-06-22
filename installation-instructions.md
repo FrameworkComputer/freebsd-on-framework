@@ -2,14 +2,15 @@
 
 ## Download and burn ISO
 
-For the following systems, please use the latest development snapshot: [FreeBSD 15-CURRENT](https://download.freebsd.org/snapshots/amd64/amd64/ISO-IMAGES/15.0/).
+Most systems are running fine on the latest stable release
+[FreeBSD 15.1](https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-amd64-disc1.iso).
+
+In case your device is not fully supported yet you can try a development snapshot:
+[FreeBSD 16-CURRENT](https://download.freebsd.org/snapshots/amd64/amd64/ISO-IMAGES/16.0/).
 
 - Framework 13 - Intel Core Ultra Series 1 (Released  Summer 2024)
-- Framework 13 - AMD Ryzen AI 300 (Released Spring 2025)
 - Framework Desktop - AMD Ryzen AI Max 300 (Released Spring 2025)
 
-All other systems can use the latest stable release
-[FreeBSD 14.2](https://download.freebsd.org/ftp/releases/ISO-IMAGES/14.2/FreeBSD-14.2-RELEASE-amd64-dvd1.iso).
 
 Burn the ISO to a USB thumb drive using your favorite imager.
 For example dd, [Rufus](https://rufus.ie/en/), or [balena etcher](https://etcher.balena.io/).
