@@ -57,7 +57,7 @@ TODO: KDE on Wayland
 - [x] Built-in Microphone
 - [x] Headset Speaker
 - [ ] Headset Microphone
-  - [ ] AMD Ryzen 7040 13in/16in (Realtek ALC295)
+  - [x] AMD Ryzen 7040 13in/16in (Realtek ALC295)
   - [ ] Intel 11th Gen (Realtek ALC295)
   - [x] Intel 11th-13th Gen (Tempo 92HD95B)
   - [ ] Intel Core Ultra Series 1 (Realtek ALC285)
